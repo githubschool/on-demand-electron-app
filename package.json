@@ -8,8 +8,13 @@
     "start": "electron-forge start",
     "package": "electron-forge package",
     "make": "electron-forge make",
-    "lint": "eslint src"
-  },
+    "lint": "eslint src",
+    "build-darwin"  : "electron-packager . electron-app --platform=darwin --icon Icons/unicorn.icns --overwrite",
+    "build-mas"     : "electron-packager . electron-app --platform=mas --icon Icons/unicorn.icns --overwrite",
+    "build-linux"   : "electron-packager . electron-app --platform=linux --icon Icons/unicorn.png --overwrite",
+    "build-win32"   : "electron-packager . electron-app --platform=win32 --icon Icons/unicorn.ico --overwrite",
+    "build"         : "npm run build-darwin && npm run build-mas && npm run build-linux && npm run build-win32"
+    },
   "keywords": [],
   "author": "brianamarie",
   "license": "MIT",
